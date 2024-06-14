@@ -5,4 +5,13 @@ const getPosts = async () => {
   return posts
 }
 
-export {getPosts}
+const getLastPost = async () => {
+  const recentPost = await prisma.post.findFirst({
+    orderBy: {
+      date: 'desc'
+    }
+  });
+  return recentPost
+}
+
+export {getPosts, getLastPost}
