@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 224, 229,230;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -16,9 +16,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(rgb(214, 219, 220), transparent), linear-gradient(rgb(255, 255, 255), transparent)
-  /* background: linear-gradient(rgb(190, 164, 91), transparent),
-    linear-gradient(90deg, rgb(227, 235, 135), transparent),
-    linear-gradient(-90deg, coral, transparent);
-  background-blend-mode: screen; */
+  background: linear-gradient(rgb(240, 240, 240), transparent), linear-gradient(rgb(255, 255, 255), transparent);
+  font-family: var(--font-inter);
 }
