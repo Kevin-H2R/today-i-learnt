@@ -37,7 +37,7 @@ const Home = async () => {
                   useless insta/tiktok/whatever post to learning something new with me.
                 </p>
                 <p>
-                  Here's what I learnt { hoursDiff > 24 ? `on the ${formattedDate}` : 'today' }:
+                  Here&apos;s what I learnt { hoursDiff > 24 ? `on the ${formattedDate}` : 'today' }:
                 </p>
               </div>
               <MainPost/>
