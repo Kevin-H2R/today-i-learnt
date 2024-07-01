@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 224, 229,230;
+  --background-start-rgb: 224, 229, 230;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -16,6 +16,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(rgb(240, 240, 240), transparent), linear-gradient(rgb(255, 255, 255), transparent);
+  background: linear-gradient(rgb(240, 240, 240), transparent),
+    linear-gradient(rgb(255, 255, 255), transparent);
   font-family: var(--font-inter);
+}
+
+.markdown > * {
+  all: revert;
 }

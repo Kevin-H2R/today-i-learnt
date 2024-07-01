@@ -5,4 +5,10 @@ const getPosts = async () => {
   return posts
 }
 
-export {getPosts}
+const getPost = async (id: number) => {
+  const post = await prisma.post.findFirst({ where: { id } })
+  if (!post) throw new Error("No Post");
+  return post
+}
+
+export {getPosts, getPost}

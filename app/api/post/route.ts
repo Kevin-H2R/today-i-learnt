@@ -6,4 +6,10 @@ const PUT = async (request: Request) => {
   return Response.json(post)
 }
 
-export {PUT}
+const POST = async (request: Request) => {
+  const {id, title, content} = await request.json()
+  const post = await prisma.post.update({ where: {id}, data: { title, content } })
+  return Response.json(post)
+}
+
+export {PUT, POST}
