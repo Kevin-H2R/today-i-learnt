@@ -1,8 +1,8 @@
 import prisma from "./prisma"
 
-const getPosts = async () => {
-  const posts = await prisma.post.findMany({orderBy: {date: "desc"}})
-  return posts
+const getPosts = async (all: boolean) => {
+  return all ? await prisma.post.findMany({ orderBy: { date: "desc" } }) :
+    await prisma.post.findMany({ orderBy: { date: "desc" }, where: {published: true}})
 }
 
 const getPost = async (id: number) => {

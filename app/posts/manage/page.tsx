@@ -3,7 +3,7 @@ import { getPosts } from "@/lib/data"
 import { formatDate } from "@/lib/dateFormat"
 
 const ManagePage = async () => {
-  const posts = await getPosts()
+  const posts = await getPosts(true)
 
   return <main>
     <div className="flex flex-col min-h-screen p-6">

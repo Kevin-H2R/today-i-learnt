@@ -5,13 +5,13 @@ import { PostProvider } from "@/context/post-context";
 
 const Home = async () => {
   // const post = await getLastPost()
-  const posts = await getPosts()
+  const posts = await getPosts(false)
   const post = posts[0]
   const today = new Date()
-  const hoursDiff = (today.getTime() - post!.date.getTime()) / (1000 * 60 * 60)
-  const formattedDate = post!.date.getFullYear() + '-' +
+  const hoursDiff = post ? (today.getTime() - post!.date.getTime()) / (1000 * 60 * 60) : 0
+  const formattedDate = post ? post!.date.getFullYear() + '-' +
     post!.date.getMonth().toString().padStart(2, '0') + '-' +
-    post!.date.getDate().toString().padStart(2, '0')
+    post!.date.getDate().toString().padStart(2, '0') : 'today'
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div className="flex flex-col items-center gap-8 w-full">
@@ -22,7 +22,7 @@ const Home = async () => {
               <div className="w-full text-5xl font-bold mb-5">
                 Today I learnt
               </div>
-              <div className="w-full text-gray-500 text-2xl flex flex-col gap-5 mb-10 leading-loose">
+              <div className="w-full text-gray-500 text-xl flex flex-col gap-5 mb-10 leading-loose">
                 <p>
                   Hi, I am Kevin.
                 </p>
@@ -41,14 +41,14 @@ const Home = async () => {
                 </p>
               </div>
               <MainPost/>
-              
+
             </div>
             <div className="w-1/4 text-end">
               <div className="text-xl">Older posts</div>
               <OlderPosts/>
             </div>
           </div>
-          
+
         </PostProvider>
       </div>
     </main>
