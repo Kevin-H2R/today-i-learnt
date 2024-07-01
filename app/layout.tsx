@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { cookies } from "next/headers";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const token = !!cookies().get('token')
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        {token && <Link href={'/'}>Home</Link>}
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ import Markdown from "react-markdown"
     </div>
     <div>
       {/* <div dangerouslySetInnerHTML={{ __html: mainPost.content }} /> */}
-      <Markdown>{ mainPost.content }</Markdown>
+      <Markdown className="markdown">{ mainPost.content }</Markdown>
     </div>
   </div>
 }
