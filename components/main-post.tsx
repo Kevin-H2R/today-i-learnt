@@ -1,6 +1,7 @@
 "use client"
 
 import { usePostContext } from "@/context/post-context"
+import Markdown from "react-markdown"
 
  const MainPost = () => {
   const {mainPost} = usePostContext()
@@ -9,7 +10,8 @@ import { usePostContext } from "@/context/post-context"
       {mainPost?.title}
     </div>
     <div>
-      <div dangerouslySetInnerHTML={{ __html: mainPost.content }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: mainPost.content }} /> */}
+      <Markdown>{ mainPost.content }</Markdown>
     </div>
   </div>
 }
