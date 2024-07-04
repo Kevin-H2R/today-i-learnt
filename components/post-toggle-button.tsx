@@ -10,7 +10,7 @@ const PostToggleButton = ({ id, isPublished }: { id: number, isPublished: boolea
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id, published: !published})
     };
-    await fetch('http://localhost:3000/api/post/toggle', requestOptions)
+    await fetch('/api/post/toggle', requestOptions)
     setPublished(!published)
   }
   return <button onClick={togglePost}>{ published ? 'un-publish' : 'publish'}</button>
