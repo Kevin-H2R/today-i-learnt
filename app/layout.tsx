@@ -24,6 +24,7 @@ export default function RootLayout({
         {token && <div className="flex gap-5">
           <Link href={'/'}>Home</Link>
           <Link href={'/posts/manage'}>Manage</Link>
+          <Link href={'/posts/create'}>Create</Link>
         </div>}
         {children}
       </body>
