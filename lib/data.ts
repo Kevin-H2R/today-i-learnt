@@ -11,4 +11,9 @@ const getPost = async (id: number) => {
   return post
 }
 
-export {getPosts, getPost}
+const getPostViewCount = async (postId: number) => {
+  const count = await prisma.postView.count({ where: { postId } })
+  return count
+}
+
+export {getPosts, getPost, getPostViewCount}

@@ -16,10 +16,19 @@ model Post {
   content String
   published Boolean @default(false)
   date DateTime @default(now())
+  views PostView[]
 }
 
 model User {
   id Int @id @default(autoincrement())
   username String @unique
   password String
+}
+
+model PostView {
+  id Int @id @default(autoincrement())
+  date DateTime @default(now())
+  ipAddress String
+  post Post @relation(fields: [postId], references: [id])
+  postId Int
 }
