@@ -17,7 +17,7 @@ const Home = async () => {
       <div className="flex flex-col items-center gap-8 w-full">
         <PostProvider initialPosts={posts}>
           <div className="flex justify-between">
-            <div className="w-1/4"/>
+            <div className="w-1/6"/>
             <div className="flex flex-col w-full  md:w-2/3">
               <div className="w-full text-5xl font-bold mb-5">
                 Today I learnt
@@ -43,9 +43,11 @@ const Home = async () => {
               <MainPost/>
 
             </div>
-            <div className="w-1/4 text-end">
-              <div className="text-xl">Older posts</div>
-              <OlderPosts/>
+            <div className="w-1/6">
+              <div className="flex flex-col fixed">
+                <div className="text-xl">Older posts</div>
+                <OlderPosts/>
+              </div>
             </div>
           </div>
 
