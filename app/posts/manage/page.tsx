@@ -1,3 +1,4 @@
+import PostDeleteButton from "@/components/post-delete-button"
 import PostToggleButton from "@/components/post-toggle-button"
 import { getPosts, getPostViewCount } from "@/lib/data"
 import { formatDate } from "@/lib/dateFormat"
@@ -27,6 +28,7 @@ const ManagePage = async () => {
             <div className="flex basis-6/12 justify-end gap-3">
               <PostToggleButton id={p.id} isPublished={p.published} />
               <div className="flex"><div className="flex flex-col">Modify</div></div>
+              <PostDeleteButton id={p.id} />
             </div>
           </div>
         })}

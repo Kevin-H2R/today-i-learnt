@@ -12,4 +12,11 @@ const POST = async (request: Request) => {
   return Response.json(post)
 }
 
-export {PUT, POST}
+const DELETE = async (request: Request) => {
+  const { id } = await request.json()
+  await prisma.postView.deleteMany({where: {postId: id}})
+  await prisma.post.delete({ where: { id } })
+  return Response.json({success: true})
+}
+
+export {PUT, POST, DELETE}
