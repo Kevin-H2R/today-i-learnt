@@ -8,7 +8,7 @@ const PUT = async (request: Request) => {
 
 const POST = async (request: Request) => {
   const {id, title, content} = await request.json()
-  const post = await prisma.post.update({ where: {id}, data: { title, content } })
+  const post = await prisma.post.update({ where: {id: Number.parseInt(id)}, data: { title, content } })
   return Response.json(post)
 }
 
