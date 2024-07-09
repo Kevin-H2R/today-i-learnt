@@ -1,4 +1,5 @@
 import prisma from "./prisma"
+import { slugify } from "./utils"
 
 const getPosts = async (all: boolean) => {
   return all ? await prisma.post.findMany({ orderBy: { date: "desc" } }) :
@@ -16,4 +17,11 @@ const getPostViewCount = async (postId: number) => {
   return count
 }
 
-export {getPosts, getPost, getPostViewCount}
+const getPostBySlug = async (slug: string) => {
+  const posts = await prisma.post.findMany({ orderBy: { date: "desc" } })
+  const post = posts.find(post => slugify(post.title) === slug)
+  if (!post) throw new Error("No post")
+  return post
+}
+
+export {getPosts, getPost, getPostViewCount, getPostBySlug}

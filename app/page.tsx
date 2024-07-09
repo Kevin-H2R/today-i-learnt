@@ -4,7 +4,6 @@ import OlderPosts from "@/components/older-posts";
 import { PostProvider } from "@/context/post-context";
 
 const Home = async () => {
-  // const post = await getLastPost()
   const posts = await getPosts(false)
   const post = posts[0]
   const today = new Date()

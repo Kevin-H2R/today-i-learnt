@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Link href={'/'}>Home</Link>
         {token && <div className="flex gap-5">
-          <Link href={'/'}>Home</Link>
           <Link href={'/posts/manage'}>Manage</Link>
           <Link href={'/posts/create'}>Create</Link>
         </div>}
